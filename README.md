@@ -18,5 +18,5 @@ Projekt slouží pouze pro demonstraci poslání zprávy mezi dvěmi na sobě ne
 
 //TODO
 - v rámci projektu demonstrovat jak implementovat to stejné dle Functional Programming Model
-- zde už nepoužíváme INPUT, OUTPU a BINDING anotace. Jsou nahrazeny java.util.function.[Supplier/Function/Consumer].
+  - zde už nepoužíváme INPUT, OUTPU a BINDING anotace. Jsou nahrazeny java.util.function.[Supplier/Function/Consumer].
 - dále demonstrovat RabbitMQ a ukázat si rozdíly
