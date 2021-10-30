@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: ticket-service
+
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+          configuration:
+            key:
+              deserializer: org.apache.kafka.common.serialization.StringDeserializer
+        bindings:
+          createdUser:
+            consumer:
+              startOffset: latest
+              autoCommitOffset: false
+      bindings:
+        createdUser:
+          destination: created.user
+          contentType: application/json
+          group: ticketService
+          consumer:
+            startOffset: latest
+            autoCommitOffset: false
+
+server:
+  port: 9001

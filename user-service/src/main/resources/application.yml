@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: user-service
+
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+          configuration:
+            key:
+              serializer: org.apache.kafka.common.serialization.StringSerializer
+      bindings:
+        createdUser:
+          destination: created.user
+          contentType: application/json
+
+server:
+  port: 9000
