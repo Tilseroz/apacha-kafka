@@ -4,7 +4,6 @@ import cz.tilseroz.userservice.entity.User;
 import cz.tilseroz.userservice.enums.UserStatus;
 import cz.tilseroz.userservice.payload.UserEventPayload;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.cloud.stream.function.StreamBridge;
 import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.support.MessageBuilder;
@@ -16,11 +15,9 @@ import org.springframework.stereotype.Service;
 public class UserEventSender {
 
     private final UserEventChannel userEventChannel;
-    private final StreamBridge streamBridge;
 
-    public UserEventSender(UserEventChannel userEventChannel, StreamBridge streamBridge) {
+    public UserEventSender(UserEventChannel userEventChannel) {
         this.userEventChannel = userEventChannel;
-        this.streamBridge = streamBridge;
     }
 
     /**

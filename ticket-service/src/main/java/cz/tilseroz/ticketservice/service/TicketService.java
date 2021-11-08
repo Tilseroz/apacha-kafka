@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 public class TicketService {
 
     public void createTicketForUser(UserEventPayload userEventPayload) {
-        String message = String.format("Creating ticket for user %s", userEventPayload.getUsername());
+        String message = String.format("Creating ticket for user %s", userEventPayload);
         log.info(message);
     }
 }
